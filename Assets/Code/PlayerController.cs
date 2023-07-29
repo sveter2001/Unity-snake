@@ -21,7 +21,8 @@ public class PlayerController : MonoBehaviour
         direction.y = Input.GetAxisRaw("Vertical");
         
     }
-
+    
+    
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
