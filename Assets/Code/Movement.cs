@@ -27,6 +27,8 @@ public class Movement : MonoBehaviour
         else if(Input.GetKey("a"))
         {
             save="a";
+
+            save;
             direction.x = -1;
         }
         else if(Input.GetKey("s"))
