@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 direction;
-    public string a="";
+    public string save="";
 
     // Start is called before the first frame update
     void Start()
@@ -21,24 +21,40 @@ public class Movement : MonoBehaviour
         direction.y=0;
         if(Input.GetKey("w"))
         {
+            save = "w";
             direction.y = 1;
         }
-        if(Input.GetKey("a"))
+        else if(Input.GetKey("a"))
         {
-             direction.x = -1;
+            save="a";
+            direction.x = -1;
         }
-        if(Input.GetKey("s"))
+        else if(Input.GetKey("s"))
         {
+            save="s";
             direction.y = -1;
         }
-        if(Input.GetKey("d"))
+        else if(Input.GetKey("d"))
         {
+            save="d";
+            direction.x = 1;
+        }
+        else if (save == "w"){
+            direction.y = 1;
+        }
+        else if (save == "a"){
+            direction.x = -1;
+        }
+        else if (save == "s"){
+            direction.y = -1;
+        }
+        else if (save == "d"){
             direction.x = 1;
         }
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + direction);
+        rb.MovePosition(rb.position + direction * new Vector2((float)0.1, (float)0.1));
     }
 }
