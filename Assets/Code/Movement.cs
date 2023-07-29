@@ -1,16 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using string;
-
-    
-
 
 public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 direction;
-    private string a;
+    public string a="";
 
     // Start is called before the first frame update
     void Start()
@@ -23,26 +19,26 @@ public class Movement : MonoBehaviour
     {
         direction.x=0;
         direction.y=0;
-        a=Input.GetKey();
-        switch (a)
+        if(Input.GetKey("w"))
         {
-            case "w":
-                direction.y = 1;
-                break;
-            case "a":
-                direction.x = -1;
-                break;
-            case "s":
-                direction.y = -1;
-                break;
-            case "d":
-                direction.x = 1;
-                break;
+            direction.y = 1;
+        }
+        if(Input.GetKey("a"))
+        {
+             direction.x = -1;
+        }
+        if(Input.GetKey("s"))
+        {
+            direction.y = -1;
+        }
+        if(Input.GetKey("d"))
+        {
+            direction.x = 1;
         }
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition((rb.position + direction)* Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + direction);
     }
 }
