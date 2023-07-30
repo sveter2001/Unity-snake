@@ -55,6 +55,7 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + direction * new Vector2((float)0.1, (float)0.1));
+        Time.fixedDeltaTime = 0.5f;
+        rb.MovePosition(rb.position + direction);
     }
 }
