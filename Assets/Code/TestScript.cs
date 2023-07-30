@@ -7,9 +7,11 @@ public class TestScript : MonoBehaviour
     [SerializeField] private EndWindow myEndWindow;
 
     private void OnCollisionEnter2D(Collision2D collision){
+        Debug.Log(collision.gameObject.name);        
+        Debug.Log(this.name);
+        Debug.Log(collision.GetContact(0).point);
         OpenWindow("gg wp");
     }
-       
 
     private void OpenWindow(string message){
         myEndWindow.gameObject.SetActive(true);

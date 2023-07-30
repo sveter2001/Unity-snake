@@ -15,8 +15,8 @@ public class MessageBox : MonoBehaviour
 
     void Awake() 
     {
-        MessageSign = GameObject.Find ("MessageBox");
-        MessageText = GameObject.Find ("MessageText").GetComponent<Text>();    
+        MessageSign = GameObject.Find("MessageBox");
+        MessageText = GameObject.Find("MessageText").GetComponent<Text>();    
     }
 
     void Start()
@@ -24,10 +24,11 @@ public class MessageBox : MonoBehaviour
         MessageSign.SetActive (false);
     }
 
-    void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "Player")
-        ShowMessageBox ();
-    }
+    // void OnTriggerEnter2D(Collider2D col) {
+    //     if (col.tag == "Player"){
+    //         ShowMessageBox();
+    //     }
+    // }
 
     public void ShowMessageBox() {
         MessageSign.SetActive (true);
@@ -38,18 +39,18 @@ public class MessageBox : MonoBehaviour
 
     public void Accept() {
         if (messageShown) {
-        hideMessageBox ();
-        messagesShown++;
-        if (messagesShown < texts.Length) {
-            ShowMessageBox ();
-        } else
-        Destroy (gameObject);
+            hideMessageBox ();
+            messagesShown++;
+            if (messagesShown < texts.Length) {
+                ShowMessageBox ();
+                } else
+                Destroy (gameObject);
+            }
+        }
+
+        public void hideMessageBox() {
+            MessageSign.SetActive (false);
+            MessageText.enabled = false;
+            messageShown = false;
         }
     }
-
-    public void hideMessageBox() {
-        MessageSign.SetActive (false);
-        MessageText.enabled = false;
-        messageShown = false;
-    }
-}
