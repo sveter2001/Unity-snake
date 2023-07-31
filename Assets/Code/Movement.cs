@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
     public string save="";
+    private float angle;
 
     // Start is called before the first frame update
     void Start()
@@ -22,16 +23,15 @@ public class Movement : MonoBehaviour
             if (this.transform.eulerAngles.z != 0.0f){
                 direction.y = 1;
                 direction.x = 0;
-                this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 180.0f);
+                angle = 180.0f;
             }
-            
         }
         else if(Input.GetKey("a"))
         {
             if (this.transform.eulerAngles.z != 90.0f){
                 direction.x = -1;
                 direction.y = 0;
-                this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 270f);
+                angle = 270.0f;
             }
         }
         else if(Input.GetKey("s"))
@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
             if (this.transform.eulerAngles.z != 180.0f){
                 direction.y = -1;
                 direction.x = 0;
-                this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+                angle = 0.0f;
             }
         }
         else if(Input.GetKey("d"))
@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour
             if (this.transform.eulerAngles.z != 270.0f){
                 direction.x = 1;
                 direction.y = 0;
-                this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
+                angle = 90.0f;
             }
         }
     }
@@ -56,5 +56,6 @@ public class Movement : MonoBehaviour
     {
         Time.fixedDeltaTime = 0.5f;
         rb.MovePosition(rb.position + direction);
+        this.transform.eulerAngles = new Vector3(0.0f, 0.0f, this.angle);
     }
 }
