@@ -54,7 +54,7 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Time.fixedDeltaTime = 0.5f;
+        Time.fixedDeltaTime = 0.3f;
         rb.MovePosition(rb.position + direction);
         this.transform.eulerAngles = new Vector3(0.0f, 0.0f, this.angle);
     }
