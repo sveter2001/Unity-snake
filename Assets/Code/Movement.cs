@@ -21,21 +21,25 @@ public class Movement : MonoBehaviour
         {
             direction.y = 1;
             direction.x = 0;
+            this.transform.Rotate(0.0f, 0.0f, 180.0f - this.transform.rotation.z, Space.Self);
         }
         else if(Input.GetKey("a"))
         {
             direction.x = -1;
             direction.y = 0;
+            this.transform.Rotate(0.0f, 0.0f, 270.0f - this.transform.rotation.z, Space.Self);
         }
         else if(Input.GetKey("s"))
         {
             direction.y = -1;
             direction.x = 0;
+            this.transform.Rotate(0.0f, 0.0f, 0.0f - this.transform.rotation.z, Space.Self);
         }
         else if(Input.GetKey("d"))
         {
             direction.x = 1;
             direction.y = 0;
+            this.transform.Rotate(0.0f, 0.0f, 90.0f - this.transform.rotation.z, Space.Self);
         }
     }
 
