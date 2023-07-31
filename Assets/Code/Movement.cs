@@ -14,12 +14,6 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D col) {
-        GameObject actual_food = GameObject.Find("Food");
-        GameObject floor = GameObject.Find("Floor");
-        actual_food.transform.position = new Vector2((float)(Random.value -0.5) * 10, (float)(Random.value -0.5) * 10);
-    }
-
     // Update is called once per frame
     void Update()
     {

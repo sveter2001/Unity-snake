@@ -10,7 +10,7 @@ public class Food : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        floor = GameObject.Find("Floor");
+        floor = GameObject.Find("Grid");
         actual_food = GameObject.Find("Food");
     }
 
@@ -22,8 +22,9 @@ public class Food : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col) {
         actual_food.transform.position = new Vector2(
-            (float)Random.Range(floor.transform.position.x, Get_Width(floor) + floor.transform.position.x), 
-            (float)Random.Range(floor.transform.position.y, Get_Height(floor) + floor.transform.position.y));
+            (float)Mathf.Round((float)Random.Range(-26, 12)) + (float)0.5, 
+            (float)Mathf.Round((float)Random.Range(-31, 7)) + (float)0.5);
+        Debug.Log(actual_food.transform.position);
     }
 
     public static Rect Get_Rect(GameObject gameObject)
