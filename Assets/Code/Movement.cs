@@ -19,27 +19,36 @@ public class Movement : MonoBehaviour
     {
         if(Input.GetKey("w"))
         {
-            direction.y = 1;
-            direction.x = 0;
-            this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 180.0f);
+            if (this.transform.eulerAngles.z != 0.0f){
+                direction.y = 1;
+                direction.x = 0;
+                this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 180.0f);
+            }
+            
         }
         else if(Input.GetKey("a"))
         {
-            direction.x = -1;
-            direction.y = 0;
-            this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 270f);
+            if (this.transform.eulerAngles.z != 90.0f){
+                direction.x = -1;
+                direction.y = 0;
+                this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 270f);
+            }
         }
         else if(Input.GetKey("s"))
         {
-            direction.y = -1;
-            direction.x = 0;
-            this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+            if (this.transform.eulerAngles.z != 180.0f){
+                direction.y = -1;
+                direction.x = 0;
+                this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+            }
         }
         else if(Input.GetKey("d"))
         {
-            direction.x = 1;
-            direction.y = 0;
-            this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
+            if (this.transform.eulerAngles.z != 270.0f){
+                direction.x = 1;
+                direction.y = 0;
+                this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
+            }
         }
     }
 
