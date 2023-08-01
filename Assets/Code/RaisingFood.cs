@@ -8,20 +8,25 @@ public class Food : MonoBehaviour
     //[SerializeField] private Body[] myBody = new Body[999];
     [SerializeField] public Sprite sprite11;
     [SerializeField] public Sprite sprite22;
-    private GameObject[] myBody = new GameObject[999];
+    public Follow[] myBody = new Follow[999];
 
     private GameObject actual_food;
     private GameObject floor;
     private GameObject Snake;
+    public GameObject body1;
     private GameObject Tail;
-    private int length=0;
+    public Follow fb1;
+    public int length=1;
     // Start is called before the first frame update
     void Start()
     {
         floor = GameObject.Find("Grid");
-        actual_food = GameObject.Find("Food");
+        actual_food = GameObject.Find("Apple");
         Snake = GameObject.Find("SnakeInner");
         Tail = GameObject.Find("Tail");
+        body1 = GameObject.Find("body1");
+        fb1 = body1.GetComponent<Follow>();
+        myBody[0]=fb1;
     }
 
     // Update is called once per frame
@@ -45,37 +50,49 @@ public class Food : MonoBehaviour
              
         GameObject go1 = new GameObject();
         go1.name = "go"+length.ToString();
-        go1.AddComponent<SpriteRenderer>();
+        SpriteRenderer render = go1.AddComponent<SpriteRenderer>();
+        Rigidbody2D rb = go1.AddComponent<Rigidbody2D>();
+        rb.MovePosition(Tail.GetComponent<Rigidbody2D>().position);
+        rb.gravityScale = 0;
+        //go1.transform.SetParent(Snake.transform);
 
-        go1.transform.SetParent(Snake.transform);
-
-        SpriteRenderer render = go1.GetComponent<SpriteRenderer>();
+        //SpriteRenderer render = go1.GetComponent<SpriteRenderer>();
         render.sprite = sprite11;
-        go1.transform.position = new Vector2(
-            (float)Mathf.Round((float)Tail.transform.position.x), 
-            (float)Mathf.Round((float)Tail.transform.position.y));
+
+        Follow fl1 = go1.AddComponent<Follow>();
+        fl1.RF = myBody[length-1];
+        myBody[length]=fl1;
+
+        
 
 
-            if (Tail.transform.eulerAngles.z == 0.0f){
-                Tail.transform.position = new Vector2(
-            (float)Mathf.Round((float)Tail.transform.position.x-1)+ (float)0.5, 
-            (float)Mathf.Round((float)Tail.transform.position.y)+ (float)0.5);
-            }
-            if (Tail.transform.eulerAngles.z == 0.90f){
-                Tail.transform.position = new Vector2(
-                    (float)Mathf.Round((float)Tail.transform.position.x)+ (float)0.5,
-                    (float)Mathf.Round((float)Tail.transform.position.y-1)+ (float)0.5);
-            }
-            if (Tail.transform.eulerAngles.z == 0.180f){
-                Tail.transform.position = new Vector2(
-            (float)Mathf.Round((float)Tail.transform.position.x+1)+ (float)0.5, 
-            (float)Mathf.Round((float)Tail.transform.position.y)+ (float)0.5);
-            }
-            if (Tail.transform.eulerAngles.z == 0.270f){
-                Tail.transform.position = new Vector2(
-            (float)Mathf.Round((float)Tail.transform.position.x)+ (float)0.5, 
-            (float)Mathf.Round((float)Tail.transform.position.y+1)+ (float)0.5);
-            }
+
+
+        //  go1.transform.position = new Vector2(
+        //      (float)Mathf.Round((float)Tail.transform.position.x)+ (float)0.5, 
+        //      (float)Mathf.Round((float)Tail.transform.position.y)+ (float)0.5);
+
+
+        //     if (Tail.transform.eulerAngles.z == 0.0f){
+        //         Tail.transform.position = new Vector2(
+        //     (float)Mathf.Round((float)Tail.transform.position.x-1)+ (float)0.5, 
+        //     (float)Mathf.Round((float)Tail.transform.position.y)+ (float)0.5);
+        //     }
+        //     if (Tail.transform.eulerAngles.z == 0.90f){
+        //         Tail.transform.position = new Vector2(
+        //             (float)Mathf.Round((float)Tail.transform.position.x)+ (float)0.5,
+        //             (float)Mathf.Round((float)Tail.transform.position.y-1)+ (float)0.5);
+        //     }
+        //     if (Tail.transform.eulerAngles.z == 0.180f){
+        //         Tail.transform.position = new Vector2(
+        //     (float)Mathf.Round((float)Tail.transform.position.x+1)+ (float)0.5, 
+        //     (float)Mathf.Round((float)Tail.transform.position.y)+ (float)0.5);
+        //     }
+        //     if (Tail.transform.eulerAngles.z == 0.270f){
+        //         Tail.transform.position = new Vector2(
+        //     (float)Mathf.Round((float)Tail.transform.position.x)+ (float)0.5, 
+        //     (float)Mathf.Round((float)Tail.transform.position.y+1)+ (float)0.5);
+        //     }
         length++;
         //myBody[length] = go1;
         

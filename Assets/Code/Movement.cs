@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
     public string save="";
+    public Vector2 oldPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,7 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         Time.fixedDeltaTime = 0.5f;
+        oldPosition = rb.position;
         rb.MovePosition(rb.position + direction);
     }
 }
