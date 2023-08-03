@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fd: {fileID: 1341837451}
-  RF: {fileID: 0}
+  RF: {fileID: 816737728}
 --- !u!1 &395768859
 GameObject:
   m_ObjectHideFlags: 0
@@ -3825,7 +3825,6 @@ GameObject:
   - component: {fileID: 1341837446}
   - component: {fileID: 1341837447}
   - component: {fileID: 1341837449}
-  - component: {fileID: 1341837450}
   - component: {fileID: 1341837451}
   m_Layer: 0
   m_Name: SnakeInner
@@ -3946,33 +3945,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
---- !u!50 &1341837450
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341837445}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &1341837451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4987,7 +4959,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  body1: {fileID: 816737724}
+  body1: {fileID: 0}
   fb1: {fileID: 0}
   length: 1
 --- !u!1 &1345877063
