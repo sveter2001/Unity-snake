@@ -6,7 +6,8 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 direction;
-    public string save="";
+    public string save = "";
+    public Vector2 oldPosition;
     private float angle;
 
     // Start is called before the first frame update
@@ -18,33 +19,37 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("w"))
+        if (Input.GetKey("w"))
         {
-            if (this.transform.eulerAngles.z != 0.0f){
+            if (this.transform.eulerAngles.z != 0.0f)
+            {
                 direction.y = 1;
                 direction.x = 0;
                 angle = 180.0f;
             }
         }
-        else if(Input.GetKey("a"))
+        else if (Input.GetKey("a"))
         {
-            if (this.transform.eulerAngles.z != 90.0f){
+            if (this.transform.eulerAngles.z != 90.0f)
+            {
                 direction.x = -1;
                 direction.y = 0;
                 angle = 270.0f;
             }
         }
-        else if(Input.GetKey("s"))
+        else if (Input.GetKey("s"))
         {
-            if (this.transform.eulerAngles.z != 180.0f){
+            if (this.transform.eulerAngles.z != 180.0f)
+            {
                 direction.y = -1;
                 direction.x = 0;
                 angle = 0.0f;
             }
         }
-        else if(Input.GetKey("d"))
+        else if (Input.GetKey("d"))
         {
-            if (this.transform.eulerAngles.z != 270.0f){
+            if (this.transform.eulerAngles.z != 270.0f)
+            {
                 direction.x = 1;
                 direction.y = 0;
                 angle = 90.0f;
@@ -54,8 +59,9 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Time.fixedDeltaTime = 0.3f;
+        Time.fixedDeltaTime = 0.5f;
+        oldPosition = rb.position;
         rb.MovePosition(rb.position + direction);
-        this.transform.eulerAngles = new Vector3(0.0f, 0.0f, this.angle);
+        this.transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);
     }
 }
