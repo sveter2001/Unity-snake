@@ -49,19 +49,28 @@ public class Food : MonoBehaviour
         
              
         GameObject go1 = new GameObject();
-        go1.name = "go"+length.ToString();
-        SpriteRenderer render = go1.AddComponent<SpriteRenderer>();
+        go1.name = "BodyNew"+length.ToString();
+        go1.transform.localScale = new Vector2((float)2.4,(float)2.4);
         Rigidbody2D rb = go1.AddComponent<Rigidbody2D>();
-        rb.MovePosition(Tail.GetComponent<Rigidbody2D>().position);
+        //rb.MovePosition(Tail.GetComponent<Rigidbody2D>().position);
+        //rb.MovePosition(new Vector2(0,0));
+        go1.transform.position = Tail.transform.position;
         rb.gravityScale = 0;
-        //go1.transform.SetParent(Snake.transform);
-
-        //SpriteRenderer render = go1.GetComponent<SpriteRenderer>();
-        render.sprite = sprite11;
-
         Follow fl1 = go1.AddComponent<Follow>();
         fl1.RF = myBody[length-1];
         myBody[length]=fl1;
+        SpriteRenderer render = go1.AddComponent<SpriteRenderer>();
+        render.sortingOrder = 40;
+
+        //go1.transform.SetParent(Tail.transform);
+
+        //SpriteRenderer render = go1.GetComponent<SpriteRenderer>();
+        
+
+        
+
+        render.sprite = sprite11;
+        //render.sortingOrder = 40;
 
         
 
