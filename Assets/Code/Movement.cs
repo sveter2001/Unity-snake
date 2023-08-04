@@ -7,17 +7,20 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 direction;
-    public string save = "";
     public Vector2 oldPosition;
     private float angle;
     
+    [SerializeField] public static float speed;  //the smaller, the faster
+    
     private const float TOLERANCE = 0.1f;
+    public const float SPEED_LOWER = 0.9f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         direction.x = -1;
+        speed = 1f;
     }
 
     // Update is called once per frame
@@ -55,7 +58,7 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Time.fixedDeltaTime = 0.5f;
+        Time.fixedDeltaTime = speed;
         oldPosition = rb.position;
         rb.MovePosition(rb.position + direction);
         transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);

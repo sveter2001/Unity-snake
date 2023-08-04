@@ -65,7 +65,12 @@ public class Food : MonoBehaviour
            
            render.sortingOrder = 40;
            render.sprite = sprite11;
-           length++; 
+           length++;
+           if (Movement.speed > 0)
+           { 
+               Movement.speed *= Movement.SPEED_LOWER;
+           }
+           Debug.Log(Movement.speed);
         }
         else if (col.CompareTag("SelfBody"))
         {
