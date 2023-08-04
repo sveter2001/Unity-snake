@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class Movement : MonoBehaviour
     public string save = "";
     public Vector2 oldPosition;
     private float angle;
+    
+    private const float TOLERANCE = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,39 +24,31 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey("w"))
         {
-            if (this.transform.eulerAngles.z != 0.0f)
-            {
-                direction.y = 1;
-                direction.x = 0;
-                angle = 180.0f;
-            }
+            if (Math.Abs(transform.eulerAngles.z - 0.0f) < TOLERANCE) return;
+            direction.y = 1;
+            direction.x = 0;
+            angle = 180.0f;
         }
         else if (Input.GetKey("a"))
         {
-            if (this.transform.eulerAngles.z != 90.0f)
-            {
-                direction.x = -1;
-                direction.y = 0;
-                angle = 270.0f;
-            }
+            if (Math.Abs(transform.eulerAngles.z - 90.0f) < TOLERANCE) return;
+            direction.x = -1;
+            direction.y = 0;
+            angle = 270.0f;
         }
         else if (Input.GetKey("s"))
         {
-            if (this.transform.eulerAngles.z != 180.0f)
-            {
-                direction.y = -1;
-                direction.x = 0;
-                angle = 0.0f;
-            }
+            if (Math.Abs(transform.eulerAngles.z - 180.0f) < TOLERANCE) return;
+            direction.y = -1;
+            direction.x = 0;
+            angle = 0.0f;
         }
         else if (Input.GetKey("d"))
         {
-            if (this.transform.eulerAngles.z != 270.0f)
-            {
-                direction.x = 1;
-                direction.y = 0;
-                angle = 90.0f;
-            }
+            if (Math.Abs(transform.eulerAngles.z - 270.0f) < TOLERANCE) return;
+            direction.x = 1;
+            direction.y = 0;
+            angle = 90.0f;
         }
     }
 
@@ -62,6 +57,6 @@ public class Movement : MonoBehaviour
         Time.fixedDeltaTime = 0.5f;
         oldPosition = rb.position;
         rb.MovePosition(rb.position + direction);
-        this.transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);
     }
 }
