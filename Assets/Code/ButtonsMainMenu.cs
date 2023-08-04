@@ -8,6 +8,11 @@ public class Buttons : MonoBehaviour
     public void PlayGame(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    
+    public void ReloadScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+    }
     public void GoToMainMenu(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }

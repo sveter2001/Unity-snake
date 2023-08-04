@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        direction.x = -1;
     }
 
     // Update is called once per frame

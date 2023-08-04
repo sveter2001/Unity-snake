@@ -69,8 +69,8 @@ public class Food : MonoBehaviour
         }
         else if (col.CompareTag("SelfBody"))
         {
-            Debug.Log("self eat");
             OpenWindow("gg wp");
+            Time.timeScale = 0f;
         }
         
     }

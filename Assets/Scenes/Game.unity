@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 395768862}
   - component: {fileID: 395768861}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: AnnotationText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1259,7 +1259,7 @@ GameObject:
   - component: {fileID: 756205037}
   - component: {fileID: 756205036}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1328,7 +1328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 756205037}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1083390121}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: ReloadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &756205037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3641,6 +3653,7 @@ GameObject:
   - component: {fileID: 1083390120}
   - component: {fileID: 1083390119}
   - component: {fileID: 1083390118}
+  - component: {fileID: 1083390121}
   m_Layer: 5
   m_Name: EndWindow
   m_TagString: Untagged
@@ -3723,6 +3736,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083390116}
   m_CullTransparentMesh: 1
+--- !u!114 &1083390121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083390116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9449116dfc15d4f95686615d21594a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1145285523
 GameObject:
   m_ObjectHideFlags: 0
@@ -5304,7 +5329,7 @@ GameObject:
   - component: {fileID: 1746786918}
   - component: {fileID: 1746786917}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5373,7 +5398,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746786918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1083390121}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: GoToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1746786918
 MonoBehaviour:
   m_ObjectHideFlags: 0

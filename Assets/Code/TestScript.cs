@@ -7,9 +7,6 @@ public class TestScript : MonoBehaviour
     [SerializeField] private EndWindow myEndWindow;
 
     private void OnCollisionEnter2D(Collision2D collision){
-        Debug.Log(collision.gameObject.name);        
-        Debug.Log(this.name);
-        Debug.Log(collision.GetContact(0).point);
         OpenWindow("gg wp");
     }
 
@@ -18,6 +15,7 @@ public class TestScript : MonoBehaviour
         myEndWindow.RestartBt.onClick.AddListener(RestartClicked);
         myEndWindow.ExitBt.onClick.AddListener(ExitClicked);
         myEndWindow.messageText.text = message;
+        Time.timeScale = 0f;
     }
 
     private void RestartClicked(){
