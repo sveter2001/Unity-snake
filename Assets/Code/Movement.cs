@@ -20,7 +20,8 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         direction.x = -1;
-        speed = 1f;
+        speed = 0.5f;
+        angle = transform.eulerAngles[2];
     }
 
     // Update is called once per frame

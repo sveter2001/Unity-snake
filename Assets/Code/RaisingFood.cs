@@ -17,6 +17,7 @@ public class Food : MonoBehaviour
     private GameObject Snake;
     public GameObject body1;
     private GameObject Tail;
+    public GameObject Tailcrutch;
     public Follow fb1;
     public int length=1;
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class Food : MonoBehaviour
         Snake = GameObject.Find("SnakeInner");
         Tail = GameObject.Find("Tail");
         body1 = GameObject.Find("body1");
+        Tailcrutch = GameObject.Find("Tailcrutch");
         fb1 = body1.GetComponent<Follow>();
         myBody[0]=fb1;
     }
@@ -59,9 +61,15 @@ public class Food : MonoBehaviour
            go1.tag = "SelfBody";
            go1.name = "BodyNew"+length.ToString();
            go1.transform.position = Tail.transform.position;
+            // попробовать задавать угол прям здесь в момент спавна чтобы починить хвост
+           fl1.straigth = sprite11;
+           fl1.curve = sprite22;
+           
            
            fl1.RF = myBody[length-1];
            myBody[length]=fl1;
+           myBody[length - 1].RFB = myBody[length];
+           fl1.RFB = Tailcrutch.GetComponent<Follow>();
            
            render.sortingOrder = 40;
            render.sprite = sprite11;

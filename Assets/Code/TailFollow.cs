@@ -8,8 +8,11 @@ public class TailFollow : MonoBehaviour
     public Food fd;
     private Rigidbody2D rb;
     public Follow RF;
+    public GameObject Tailcrutch;
+
     void Start()
     {   
+        Tailcrutch = GameObject.Find("Tailcrutch");
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;        
     }
@@ -17,11 +20,14 @@ public class TailFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.MovePosition(RF.rb.position);   
+        rb.MovePosition(RF.rb.position);
+        Tailcrutch.transform.position = new Vector2((float)0,(float)0);
+        
     }
 
     void FixedUpdate()
     {
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, RF.oldangle);
         RF = fd.myBody[fd.length-1];
              
     }
