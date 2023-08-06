@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         direction.x = -1;
-        speed = 0.5f;
+        speed = 0.3f;
         angle = transform.eulerAngles[2];
     }
 

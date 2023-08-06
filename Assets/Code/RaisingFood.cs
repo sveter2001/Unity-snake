@@ -12,7 +12,6 @@ public class Food : MonoBehaviour
     
     [SerializeField] private EndWindow myEndWindow;
 
-    private GameObject actual_food;
     private GameObject floor;
     private GameObject Snake;
     public GameObject body1;
@@ -24,7 +23,6 @@ public class Food : MonoBehaviour
     void Start()
     {
         floor = GameObject.Find("Grid");
-        actual_food = GameObject.Find("Apple");
         Snake = GameObject.Find("SnakeInner");
         Tail = GameObject.Find("Tail");
         body1 = GameObject.Find("body1");
@@ -33,21 +31,9 @@ public class Food : MonoBehaviour
         myBody[0]=fb1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Food"))
         {
-           actual_food.transform.position = new Vector2(
-                       (float)Mathf.Round((float)Random.Range(-26, 12)) + (float)0.5, 
-                       (float)Mathf.Round((float)Random.Range(-31, 7)) + (float)0.5);
-           
-           Debug.Log(actual_food.transform.position);
-           
            GameObject go1 = new GameObject();
            Follow fl1 = go1.AddComponent<Follow>();
            SpriteRenderer render = go1.AddComponent<SpriteRenderer>();
@@ -74,10 +60,10 @@ public class Food : MonoBehaviour
            render.sortingOrder = 40;
            render.sprite = sprite11;
            length++;
-           if (Movement.speed > 0)
-           { 
-               Movement.speed *= Movement.SPEED_LOWER;
-           }
+           // if (Movement.speed > 0)
+           // { 
+           //     Movement.speed *= Movement.SPEED_LOWER;
+           // }
            Debug.Log(Movement.speed);
         }
         else if (col.CompareTag("SelfBody"))
