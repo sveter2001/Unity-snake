@@ -41,22 +41,40 @@ public class FoodSpawn : MonoBehaviour
     {
         count = 0;
         
-        this.Spawn(6000);
+        Spawn(6000);
+        Debug.Log("spawn start");
     }
 
     void FixedUpdate()
     {
-        Time.fixedDeltaTime = 1f;
-        foreach (var food in foods)
-        {
-            FoodType ft = food.GetComponent<FoodType>();
+        // Time.fixedDeltaTime = 1f;
+        // foreach (var food in foods)
+        // {
+        //     FoodType ft = food.GetComponent<FoodType>();
+        //
+        //     if (food.GetComponent<FoodType>().TTL <= 0)
+        //     {
+        //         foods.Remove(food);
+        //         Destroy(food);
+        //         Debug.Log("Destroyed");
+        //     }
+        //     
+        // }
 
+        int i = 0;
+        while (true)
+        {
+            GameObject food = foods[i];
+            
             if (food.GetComponent<FoodType>().TTL <= 0)
             {
-                foods.Remove(food);
+                foods.RemoveAt(i);
                 Destroy(food);
+                Debug.Log("Destroyed");
+                i = Mathf.Min(i - 1, 0);
             }
-            
+
+            i += 1;
         }
     }
     
@@ -66,6 +84,7 @@ public class FoodSpawn : MonoBehaviour
             foods.Remove(col.GameObject());
             Destroy(col.GameObject());
             Spawn(6000);
+            Debug.Log("Spawned" + foods[-1].name);
         }
     }
 }

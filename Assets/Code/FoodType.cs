@@ -8,7 +8,6 @@ public class FoodType : MonoBehaviour
     public int TTL;
     void Update()
     {
-        // Time.fixedDeltaTime = 1f;
         TTL -= 1;
     }
 }
