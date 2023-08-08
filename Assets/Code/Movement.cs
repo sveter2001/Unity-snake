@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     private Vector2 direction;
     public Vector2 oldPosition;
     private float angle;
+    [SerializeField] public Follow RF;
     
     [SerializeField] public static float speed;  //the smaller, the faster
     
@@ -21,7 +22,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         direction.x = -1;
         speed = 0.5f;
-        angle = transform.eulerAngles[2];
+        angle = 270.0f;//transform.eulerAngles[2];
     }
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public class Movement : MonoBehaviour
             direction.y = 1;
             direction.x = 0;
             angle = 180.0f;
+            //RF.angle = 180.0f;
         }
         else if (Input.GetKey("a"))
         {
@@ -40,6 +42,7 @@ public class Movement : MonoBehaviour
             direction.x = -1;
             direction.y = 0;
             angle = 270.0f;
+            //RF.angle = 270.0f;
         }
         else if (Input.GetKey("s"))
         {
@@ -47,6 +50,7 @@ public class Movement : MonoBehaviour
             direction.y = -1;
             direction.x = 0;
             angle = 0.0f;
+            //RF.angle = 0.0f;
         }
         else if (Input.GetKey("d"))
         {
@@ -54,11 +58,28 @@ public class Movement : MonoBehaviour
             direction.x = 1;
             direction.y = 0;
             angle = 90.0f;
+            //RF.angle = 90.0f;
         }
     }
 
     void FixedUpdate()
     {
+        // if (Input.GetKey("w"))
+        // {
+        //     RF.angle = 180.0f;
+        // }
+        // else if (Input.GetKey("a"))
+        // {
+        //     RF.angle = 270.0f;
+        // }
+        // else if (Input.GetKey("s"))
+        // {
+        //     RF.angle = 0.0f;
+        // }
+        // else if (Input.GetKey("d"))
+        // {
+        //     RF.angle = 90.0f;
+        // }
         Time.fixedDeltaTime = speed;
         oldPosition = rb.position;
         rb.MovePosition(rb.position + direction);

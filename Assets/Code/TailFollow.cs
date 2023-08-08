@@ -21,13 +21,15 @@ public class TailFollow : MonoBehaviour
     void Update()
     {
         rb.MovePosition(RF.rb.position);
-        Tailcrutch.transform.position = new Vector2((float)0,(float)0);
-        
+        //Tailcrutch.transform.position = new Vector2((float)0,(float)0);
+        Tailcrutch.transform.position = transform.position;
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, RF.oldangle);
+
     }
 
     void FixedUpdate()
     {
-        transform.eulerAngles = new Vector3(0.0f, 0.0f, RF.oldangle);
+        
         RF = fd.myBody[fd.length-1];
              
     }

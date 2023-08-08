@@ -28,15 +28,9 @@ public class Follow : MonoBehaviour
     {
         
         oldPosition = rb.position;
+        //if (RF.angle == RFB.angle || Mathf.Abs(RF.angle - 180) == RFB.angle)
         rb.MovePosition(RF.oldPosition);
-    }
-
-    void FixedUpdate()
-    {
-        angle = transform.eulerAngles[2];
-        oldangle = transform.eulerAngles[2];
-        transform.eulerAngles = new Vector3(0.0f, 0.0f, RF.oldangle);
-        if (RF.angle == RFB.angle || Mathf.Abs(RF.angle - 180) == RFB.angle)
+        if( angle == transform.eulerAngles[2] )
         {
             sr.sprite = straigth;
         }
@@ -44,6 +38,16 @@ public class Follow : MonoBehaviour
         {
             sr.sprite = curve;
         }
+        
+    }
+
+    void FixedUpdate()
+    {
+        angle = RF.transform.eulerAngles[2];
+        oldangle = transform.eulerAngles[2];
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, RF.oldangle);
+        
+        
         //transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);
         //Time.fixedDeltaTime = 0.5f;
 
