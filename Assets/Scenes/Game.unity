@@ -3713,7 +3713,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foods: []
-  sprite_for_all: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  myPrefabs:
+  - {fileID: 2329203808495583315, guid: 07752e3ca473b1a4292f6ea479c65a60, type: 3}
+  - {fileID: 2329203808495583315, guid: cf1d8b0770aa64b42ab6543a06f0532c, type: 3}
+  - {fileID: 2329203808495583315, guid: 0b0b1e296a6bc7148b119924c527b6ca, type: 3}
+  - {fileID: 2329203808495583315, guid: bac35754f0abace45ac1eccd5b6ba33f, type: 3}
 --- !u!1 &1079404468
 GameObject:
   m_ObjectHideFlags: 0
