@@ -64,7 +64,6 @@ public class Food : MonoBehaviour
            // { 
            //     Movement.speed *= Movement.SPEED_LOWER;
            // }
-           Debug.Log(Movement.speed);
         }
         else if (col.CompareTag("SelfBody"))
         {

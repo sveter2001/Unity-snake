@@ -30,9 +30,9 @@ public class FoodSpawn : MonoBehaviour
         SpriteRenderer sr = new_food.AddComponent<SpriteRenderer>();
         sr.sprite = sprite_for_all;
         
-        new_food.transform.position = new Vector2(
+        new_food.transform.position = new Vector3(
             Mathf.Round(Random.Range(-26, 12)) + (float)0.5, 
-            Mathf.Round(Random.Range(-31, 7)) + (float)0.5);
+            Mathf.Round(Random.Range(-31, 7)) + (float)0.5, -1f);
 
         foods.Add(new_food);
     }
@@ -47,19 +47,6 @@ public class FoodSpawn : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Time.fixedDeltaTime = 1f;
-        // foreach (var food in foods)
-        // {
-        //     FoodType ft = food.GetComponent<FoodType>();
-        //
-        //     if (food.GetComponent<FoodType>().TTL <= 0)
-        //     {
-        //         foods.Remove(food);
-        //         Destroy(food);
-        //         Debug.Log("Destroyed");
-        //     }
-        //     
-        // }
 
         int i = 0;
         while (true)
@@ -75,6 +62,10 @@ public class FoodSpawn : MonoBehaviour
             }
 
             i += 1;
+            if (i >= foods.Count)
+            {
+                break;
+            }
         }
     }
     
@@ -84,7 +75,7 @@ public class FoodSpawn : MonoBehaviour
             foods.Remove(col.GameObject());
             Destroy(col.GameObject());
             Spawn(6000);
-            Debug.Log("Spawned" + foods[-1].name);
+            Debug.Log("Spawned");
         }
     }
 }
