@@ -42,7 +42,6 @@ public class FoodSpawn : MonoBehaviour
         count = 0;
         
         Spawn(6000);
-        Debug.Log("spawn start");
     }
 
     void FixedUpdate()
@@ -62,7 +61,6 @@ public class FoodSpawn : MonoBehaviour
             {
                 foods.RemoveAt(i);
                 Destroy(food);
-                Debug.Log("Destroyed");
                 i = Mathf.Min(i - 1, 0);
             }
 
@@ -79,8 +77,6 @@ public class FoodSpawn : MonoBehaviour
         {
             foods.Remove(col.GameObject());
             Destroy(col.GameObject());
-            // Spawn(6000);
-            // Debug.Log("Spawned");
         }
     }
 }
