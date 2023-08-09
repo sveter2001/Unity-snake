@@ -48,6 +48,11 @@ public class FoodSpawn : MonoBehaviour
     void FixedUpdate()
     {
 
+        if (foods.Count == 0)
+        {
+            Spawn(6000);
+        }
+
         int i = 0;
         while (true)
         {
@@ -74,8 +79,8 @@ public class FoodSpawn : MonoBehaviour
         {
             foods.Remove(col.GameObject());
             Destroy(col.GameObject());
-            Spawn(6000);
-            Debug.Log("Spawned");
+            // Spawn(6000);
+            // Debug.Log("Spawned");
         }
     }
 }
