@@ -42,6 +42,7 @@ public class Food : MonoBehaviour
            
            BoxCollider2D bk = go1.AddComponent<BoxCollider2D>();
            bk.isTrigger = true;
+           bk.size = new Vector2(0.2f, 0.2f);
 
            go1.transform.localScale = new Vector2((float)2.4,(float)2.4);
            go1.tag = "SelfBody";
