@@ -8,6 +8,7 @@ public class Food : MonoBehaviour
     //[SerializeField] private Body[] myBody = new Body[999];
     [SerializeField] public Sprite sprite11;
     [SerializeField] public Sprite sprite22;
+    [SerializeField] public Sprite sprite33;
     public Follow[] myBody = new Follow[999];
     
     [SerializeField] private EndWindow myEndWindow;
@@ -63,7 +64,8 @@ public class Food : MonoBehaviour
            go1.transform.position = Tail.transform.position;
             // попробовать задавать угол прям здесь в момент спавна чтобы починить хвост
            fl1.straigth = sprite11;
-           fl1.curve = sprite22;
+           fl1.curveR = sprite22;
+           fl1.curveL = sprite33;
            
            
            fl1.RF = myBody[length-1];

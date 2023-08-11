@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,9 @@ public class body1Follow : MonoBehaviour
     private GameObject body1;
     private SpriteRenderer sr;
     public Sprite straigth;
-    public Sprite curve;
+    public Sprite curveR;
+    public Sprite curveL;
+    public float oldangle;
     //public Follow RF;
     // Start is called before the first frame update
     void Start()
@@ -22,14 +25,31 @@ public class body1Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (body1.transform.eulerAngles[2] != Snake.transform.eulerAngles[2])
+        if (Math.Abs(body1.transform.eulerAngles[2]) < Math.Abs(Snake.transform.eulerAngles[2]))
         {
-            sr.sprite = curve;
-            //RF.angle = Snake.transform.eulerAngles[2];
+            sr.sprite = curveR;
+            if (Math.Abs(body1.transform.eulerAngles[2]) == 0 && Math.Abs(Snake.transform.eulerAngles[2]) == 270)
+            {
+                sr.flipX = true;
+            }
         }
-        else
+        else if(Math.Abs(body1.transform.eulerAngles[2]) > Math.Abs(Snake.transform.eulerAngles[2]))
+        {
+            sr.sprite = curveL;
+            if (oldangle == 270 && Math.Abs(Snake.transform.eulerAngles[2]) == 0)
+            {
+                sr.flipX = true;
+            }
+        }
+        else if(Math.Abs(body1.transform.eulerAngles[2]) == Math.Abs(Snake.transform.eulerAngles[2]))
         {
             sr.sprite = straigth;
+            sr.flipX = false;
         }
+    }
+    void FixedUpdate()
+    {
+        oldangle = transform.eulerAngles[2];
+        
     }
 }
