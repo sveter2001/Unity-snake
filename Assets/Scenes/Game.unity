@@ -1525,6 +1525,7 @@ GameObject:
   - component: {fileID: 781253429}
   - component: {fileID: 781253432}
   - component: {fileID: 781253431}
+  - component: {fileID: 781253433}
   m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
@@ -3302,6 +3303,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &781253433
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781253428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 942becebdcd84ba4ca7611261f175459, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &816737724
 GameObject:
   m_ObjectHideFlags: 0
