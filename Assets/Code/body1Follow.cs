@@ -9,11 +9,16 @@ public class body1Follow : MonoBehaviour
     private GameObject Snake;
     private GameObject body1;
     private SpriteRenderer sr;
-    public Sprite straigth;
-    public Sprite curveR;
-    public Sprite curveL;
+    public Sprite straigthV;
+    public Sprite straigthH;
+    public Sprite curve1;
+    public Sprite curve2;
+    public Sprite curve3;
+    public Sprite curve4;
     public float oldangle;
-    //public Follow RF;
+    public float angle;
+    public Follow RF;
+    public Follow RFB;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,30 +30,103 @@ public class body1Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Math.Abs(body1.transform.eulerAngles[2]) < Math.Abs(Snake.transform.eulerAngles[2]))
+
+        if (RF.transform.position.x > transform.position.x && RF.transform.position.y == transform.position.y)
         {
-            sr.sprite = curveR;
-            if (Math.Abs(body1.transform.eulerAngles[2]) == 0 && Math.Abs(Snake.transform.eulerAngles[2]) == 270)
+            if (RFB.transform.position.y > transform.position.y)
             {
-                sr.flipX = true;
+                //sprite
+                sr.sprite = curve3;
+                //delta
+            }
+            else if (RFB.transform.position.y < transform.position.y)
+            {
+                //sprite
+                sr.sprite = curve1;
+                //delta
+            }
+            else if(RFB.transform.position.x == RF.transform.position.x)
+            {
+                sr.sprite = straigthH;
+            }
+            else
+            {
+                sr.sprite = straigthV;
             }
         }
-        else if(Math.Abs(body1.transform.eulerAngles[2]) > Math.Abs(Snake.transform.eulerAngles[2]))
+        else if (RF.transform.position.x < transform.position.x && RF.transform.position.y == transform.position.y)
         {
-            sr.sprite = curveL;
-            if (oldangle == 270 && Math.Abs(Snake.transform.eulerAngles[2]) == 0)
+            if (RFB.transform.position.y > transform.position.y)
             {
-                sr.flipX = true;
+                //sprite
+                sr.sprite = curve4;
+                //delta
+            }
+            else if (RFB.transform.position.y < transform.position.y)
+            {
+                //sprite
+                sr.sprite = curve2;
+                //delta
+            }
+            else if(RFB.transform.position.x == RF.transform.position.x)
+            {
+                sr.sprite = straigthH;
+            }
+            else
+            {
+                sr.sprite = straigthV;
             }
         }
-        else if(Math.Abs(body1.transform.eulerAngles[2]) == Math.Abs(Snake.transform.eulerAngles[2]))
+        else if (RF.transform.position.x == transform.position.x && RF.transform.position.y > transform.position.y)
         {
-            sr.sprite = straigth;
-            sr.flipX = false;
+            if (RFB.transform.position.x > transform.position.x)
+            {
+                //sprite
+                sr.sprite = curve3;
+                //delta
+            }
+            else if (RFB.transform.position.x < transform.position.x)
+            {
+                //sprite
+                sr.sprite = curve4;
+                //delta
+            }
+            else if(RFB.transform.position.x == RF.transform.position.x)
+            {
+                sr.sprite = straigthH;
+            }
+            else
+            {
+                sr.sprite = straigthV;
+            }
+        }
+        else if (RF.transform.position.x == transform.position.x && RF.transform.position.y < transform.position.y)
+        {
+            if (RFB.transform.position.x > transform.position.x)
+            {
+                //sprite
+                sr.sprite = curve1;
+                //delta
+            }
+            else if (RFB.transform.position.x < transform.position.x)
+            {
+                //sprite
+                sr.sprite = curve2;
+                //delta
+            }
+            else if(RFB.transform.position.x == RF.transform.position.x)
+            {
+                sr.sprite = straigthH;
+            }
+            else
+            {
+                sr.sprite = straigthV;
+            }
         }
     }
     void FixedUpdate()
     {
+        angle = RF.transform.eulerAngles[2];
         oldangle = transform.eulerAngles[2];
         
     }

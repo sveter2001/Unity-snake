@@ -12,9 +12,12 @@ public class Follow : MonoBehaviour
     public Rigidbody2D rb;
     public float angle;
     private SpriteRenderer sr;
-    public Sprite straigth;
-    public Sprite curveR;
-    public Sprite curveL;
+    public Sprite straigthV;
+    public Sprite straigthH;
+    public Sprite curve1;
+    public Sprite curve2;
+    public Sprite curve3;
+    public Sprite curve4;
     public float oldangle;
     //private Vector3 delta = new Vector3((float)0,(float)0,(float)0); 
     
@@ -31,78 +34,108 @@ public class Follow : MonoBehaviour
     {
         
         oldPosition = rb.position;
-        //if (RF.angle == RFB.angle || Mathf.Abs(RF.angle - 180) == RFB.angle)
         rb.MovePosition(RF.oldPosition);
-
-        if( Math.Abs(angle) > Math.Abs(transform.eulerAngles[2]))
-        {
-            sr.sprite = curveR;
-            if (Math.Abs(transform.eulerAngles[2]) == 0 && Math.Abs(angle) == 270)
-            {
-                sr.flipX = true;
-            }
-        }
-        else if(Math.Abs(angle) < Math.Abs(transform.eulerAngles[2]))
-        {
-            sr.sprite = curveL;
-            if (oldangle == 270 && Math.Abs(angle) == 0)
-            {
-                sr.flipX = true;
-            }
-
-            // switch (angle)
-            // {
-            //     case 0:
-            //         transform.position += new Vector3((float)-0.1,(float)-0.1,(float)0);
-            //         break;
-            //     case 90:
-            //         transform.position += new Vector3((float)0.1,(float)-0.1,(float)0);
-            //         break;
-            //     case 180:
-            //         transform.position += new Vector3((float)0.1,(float)0.1,(float)0);
-            //         break;
-            //     case 270:
-            //         transform.position += new Vector3((float)-0.1,(float)0.1,(float)0);
-            //         break;
-            //     
-            // }
-        }
-        else if(Math.Abs(angle) == Math.Abs(transform.eulerAngles[2]))
-        {
-            sr.sprite = straigth;
-            sr.flipX = false;
-        }
         
+        if (RF.transform.position.x > transform.position.x && RF.transform.position.y == transform.position.y)
+        {
+            if (RFB.transform.position.y > transform.position.y)
+            {
+                //sprite
+                sr.sprite = curve3;
+                //delta
+            }
+            else if (RFB.transform.position.y < transform.position.y)
+            {
+                //sprite
+                sr.sprite = curve1;
+                //delta
+            }
+            else if(RFB.transform.position.x == RF.transform.position.x)
+            {
+                sr.sprite = straigthH;
+            }
+            else
+            {
+                sr.sprite = straigthV;
+            }
+        }
+        else if (RF.transform.position.x < transform.position.x && RF.transform.position.y == transform.position.y)
+        {
+            if (RFB.transform.position.y > transform.position.y)
+            {
+                //sprite
+                sr.sprite = curve4;
+                //delta
+            }
+            else if (RFB.transform.position.y < transform.position.y)
+            {
+                //sprite
+                sr.sprite = curve2;
+                //delta
+            }
+            else if(RFB.transform.position.x == RF.transform.position.x)
+            {
+                sr.sprite = straigthH;
+            }
+            else
+            {
+                sr.sprite = straigthV;
+            }
+        }
+        else if (RF.transform.position.x == transform.position.x && RF.transform.position.y > transform.position.y)
+        {
+            if (RFB.transform.position.x > transform.position.x)
+            {
+                //sprite
+                sr.sprite = curve3;
+                //delta
+            }
+            else if (RFB.transform.position.x < transform.position.x)
+            {
+                //sprite
+                sr.sprite = curve4;
+                //delta
+            }
+            else if(RFB.transform.position.x == RF.transform.position.x)
+            {
+                sr.sprite = straigthH;
+            }
+            else
+            {
+                sr.sprite = straigthV;
+            }
+        }
+        else if (RF.transform.position.x == transform.position.x && RF.transform.position.y < transform.position.y)
+        {
+            if (RFB.transform.position.x > transform.position.x)
+            {
+                //sprite
+                sr.sprite = curve1;
+                //delta
+            }
+            else if (RFB.transform.position.x < transform.position.x)
+            {
+                //sprite
+                sr.sprite = curve2;
+                //delta
+            }
+            else if(RFB.transform.position.x == RF.transform.position.x)
+            {
+                sr.sprite = straigthH;
+            }
+            else
+            {
+                sr.sprite = straigthV;
+            }
+        }
     }
 
     void FixedUpdate()
     {
         
-        // transform.position -= delta;
-        // delta = new Vector3((float)0,(float)0,(float)0);
-        // if (Math.Abs(angle) < Math.Abs(transform.eulerAngles[2]))
-        // {
-        //     switch (angle)
-        //     {
-        //         case 0:
-        //             delta = new Vector3((float)-0.1,(float)-0.1,(float)0);
-        //             break;
-        //         case 90:
-        //             delta = new Vector3((float)0.1,(float)-0.1,(float)0);
-        //             break;
-        //         case 180:
-        //             delta = new Vector3((float)0.1,(float)0.1,(float)0);
-        //             break;
-        //         case 270:
-        //             delta = new Vector3((float)-0.1,(float)0.1,(float)0);
-        //             break;
-        //     }
-        // }
-        // transform.position += delta;
-        
         angle = RF.transform.eulerAngles[2];
         oldangle = transform.eulerAngles[2];
-        transform.eulerAngles = new Vector3(0.0f, 0.0f, RF.oldangle);
+        //transform.eulerAngles = new Vector3(0.0f, 0.0f, RF.oldangle);
         
         //transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);
         //Time.fixedDeltaTime = 0.5f;

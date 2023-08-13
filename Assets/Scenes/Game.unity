@@ -844,6 +844,8 @@ MonoBehaviour:
   fd: {fileID: 1341837451}
   RF: {fileID: 816737728}
   Tailcrutch: {fileID: 0}
+  straigthV: {fileID: 2039433514, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  straigthH: {fileID: 2071450382, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
 --- !u!61 &347411782
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1050,9 +1052,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511831632}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.4527526}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.45275283}
+  m_LocalScale: {x: 0.4000001, y: 0.4000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 347411777}
@@ -1101,9 +1103,12 @@ MonoBehaviour:
   oldPosition: {x: 0, y: 0}
   rb: {fileID: 0}
   angle: 0
-  straigth: {fileID: 2071450382, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
-  curveR: {fileID: 0}
-  curveL: {fileID: 0}
+  straigthV: {fileID: 0}
+  straigthH: {fileID: 0}
+  curve1: {fileID: 0}
+  curve2: {fileID: 0}
+  curve3: {fileID: 0}
+  curve4: {fileID: 0}
   oldangle: 0
 --- !u!212 &511831636
 SpriteRenderer:
@@ -2684,7 +2689,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3266,9 +3271,13 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 9cb1d78c5bafbdc4390d04843c68c1e9, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 3696678f5b6177847a4ee68c3fb77dad, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 164
     m_Data: {fileID: 21300000, guid: edc9366f54067d64981d3b1f5af8d898, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1373296686, guid: ae0d43c61ba4fdd4e805968addbd92c7, type: 3}
   m_TileMatrixArray:
@@ -3397,8 +3406,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 739382234, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 1522039000, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3417,14 +3426,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816737724}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5, y: 0.5, z: 0}
   m_LocalScale: {x: 2.4, y: 2.4000006, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 858616701}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &816737728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3442,9 +3451,12 @@ MonoBehaviour:
   oldPosition: {x: 0, y: 0}
   rb: {fileID: 0}
   angle: 0
-  straigth: {fileID: 739382234, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
-  curveR: {fileID: 20284855, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
-  curveL: {fileID: 2104998077, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  straigthV: {fileID: 1522039000, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  straigthH: {fileID: 739382234, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  curve1: {fileID: -213242484, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  curve2: {fileID: -1418911921, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  curve3: {fileID: -1523868968, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  curve4: {fileID: 768645476, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
   oldangle: 0
 --- !u!50 &816737729
 Rigidbody2D:
@@ -3509,7 +3521,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.22, y: 0.4}
+    oldSize: {x: 0.4, y: 0.22}
     newSize: {x: 0.22, y: 0.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3529,13 +3541,14 @@ GameObject:
   - component: {fileID: 858616701}
   - component: {fileID: 858616703}
   - component: {fileID: 858616702}
+  - component: {fileID: 858616705}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: body1inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &858616701
 Transform:
   m_ObjectHideFlags: 0
@@ -3544,8 +3557,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858616700}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.016376823}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01637683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3563,10 +3576,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6099e1668070e9541b45d9ba7362d05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  straigth: {fileID: 739382234, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
-  curveR: {fileID: 20284855, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
-  curveL: {fileID: 2104998077, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  straigthV: {fileID: 739382234, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  straigthH: {fileID: 1522039000, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  curve1: {fileID: 814597439, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  curve2: {fileID: -752839886, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  curve3: {fileID: 20284855, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  curve4: {fileID: 2104998077, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
   oldangle: 0
+  angle: 0
+  RF: {fileID: 974397682}
+  RFB: {fileID: 511831635}
 --- !u!212 &858616703
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3619,6 +3638,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &858616705
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858616700}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &974397676
 GameObject:
   m_ObjectHideFlags: 0
@@ -3763,9 +3809,12 @@ MonoBehaviour:
   oldPosition: {x: 0, y: 0}
   rb: {fileID: 0}
   angle: 0
-  straigth: {fileID: -937954374, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
-  curveR: {fileID: -937954374, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
-  curveL: {fileID: -937954374, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  straigthV: {fileID: 0}
+  straigthH: {fileID: 0}
+  curve1: {fileID: 0}
+  curve2: {fileID: 0}
+  curve3: {fileID: 0}
+  curve4: {fileID: 0}
   oldangle: 0
 --- !u!212 &974397683
 SpriteRenderer:
@@ -4337,8 +4386,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite11: {fileID: 739382234, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
-  sprite22: {fileID: 20284855, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
-  sprite33: {fileID: 2104998077, guid: 85710cd374396d04e8ad65693890a2fd, type: 3}
+  sprite12: {fileID: 1522039000, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  sprite22: {fileID: -213242484, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  sprite33: {fileID: -1418911921, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  sprite44: {fileID: -1523868968, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
+  sprite55: {fileID: 768645476, guid: 3b082aed111a27e4ba08be6e43887478, type: 3}
   myBody:
   - {fileID: 0}
   - {fileID: 0}
@@ -5340,6 +5392,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   myEndWindow: {fileID: 1083390118}
+  bd1f: {fileID: 858616702}
   body1: {fileID: 0}
   Tailcrutch: {fileID: 0}
   fb1: {fileID: 0}
@@ -19949,6 +20002,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -23487,7 +23550,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1602
+  - m_RefCount: 1603
     m_Data: {fileID: 11400000, guid: 3696678f5b6177847a4ee68c3fb77dad, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -23510,14 +23573,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1602
+  - m_RefCount: 1603
     m_Data: {fileID: 1373296686, guid: ae0d43c61ba4fdd4e805968addbd92c7, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 164
     m_Data: {fileID: 108357350, guid: b67f5cebbcad07a40956f2710ff19c9b, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1766
+  - m_RefCount: 1767
     m_Data:
       e00: 1
       e01: 0
@@ -23536,7 +23599,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1766
+  - m_RefCount: 1767
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1

@@ -7,11 +7,15 @@ public class Food : MonoBehaviour
 {
     //[SerializeField] private Body[] myBody = new Body[999];
     [SerializeField] public Sprite sprite11;
+    [SerializeField] public Sprite sprite12;
     [SerializeField] public Sprite sprite22;
     [SerializeField] public Sprite sprite33;
+    [SerializeField] public Sprite sprite44;
+    [SerializeField] public Sprite sprite55;
     public Follow[] myBody = new Follow[999];
     
     [SerializeField] private EndWindow myEndWindow;
+    [SerializeField] public body1Follow bd1f;
 
     private GameObject actual_food;
     private GameObject floor;
@@ -62,21 +66,24 @@ public class Food : MonoBehaviour
            go1.tag = "SelfBody";
            go1.name = "BodyNew"+length.ToString();
            go1.transform.position = Tail.transform.position;
-            // попробовать задавать угол прям здесь в момент спавна чтобы починить хвост
-           fl1.straigth = sprite11;
-           fl1.curveR = sprite22;
-           fl1.curveL = sprite33;
-           
+           fl1.straigthV = sprite12;
+           fl1.straigthH = sprite11;
+           fl1.curve1 = sprite22;
+           fl1.curve2 = sprite33;
+           fl1.curve3 = sprite44;
+           fl1.curve4 = sprite55;
+
            
            fl1.RF = myBody[length-1];
            myBody[length]=fl1;
            myBody[length - 1].RFB = myBody[length];
            fl1.RFB = Tailcrutch.GetComponent<Follow>();
+           bd1f.RFB = myBody[1];
            
            render.sortingOrder = 40;
            render.sprite = sprite11;
            length++;
-           if (Movement.speed > 0)
+           if (Movement.speed > 0 && Movement.speed > 0.35)
            { 
                Movement.speed *= Movement.SPEED_LOWER;
            }
