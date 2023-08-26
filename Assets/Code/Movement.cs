@@ -10,9 +10,9 @@ public class Movement : MonoBehaviour
     public Vector2 oldPosition;
     private float angle;
     [SerializeField] public Follow RF;
-    
+
     [SerializeField] public static float speed;  //the smaller, the faster
-    
+
     private const float TOLERANCE = 0.1f;
     public const float SPEED_LOWER = 0.9f;
 
