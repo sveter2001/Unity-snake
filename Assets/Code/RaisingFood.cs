@@ -64,7 +64,7 @@ public class Food : MonoBehaviour
             bk.isTrigger = true;
             bk.size = new Vector2(0.2f, 0.2f);
 
-            go1.transform.localScale = new Vector2((float)2.4, (float)2.4);
+            go1.transform.localScale = new Vector2((float)2.5, (float)2.5);
             go1.tag = "SelfBody";
             go1.name = "BodyNew" + length.ToString();
             go1.transform.position = Tail.transform.position;

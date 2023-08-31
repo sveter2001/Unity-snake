@@ -275,11 +275,11 @@ TextureImporter:
         serializedVersion: 2
         x: 51
         y: 1
-        width: 23
+        width: 24
         height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -311,6 +311,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Snake sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 27
+        width: 5
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7146bd477c888ce44a2dceb937d17634
+      internalID: 1031056267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -331,6 +352,7 @@ TextureImporter:
       Snake sprite sheet_6: 616623205
       Snake sprite sheet_7: 2071450382
       Snake sprite sheet_8: 739382234
+      Snake sprite sheet_9: 1031056267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

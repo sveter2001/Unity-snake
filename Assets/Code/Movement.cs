@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     public Vector2 oldPosition;
     private float angle;
     [SerializeField] public Follow RF;
+    [SerializeField] public StartScript StartScript;
 
     [SerializeField] public static float speed;  //the smaller, the faster
 
@@ -20,8 +21,9 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        direction.x = -1;
         speed = 0.5f;
+        //direction.x = -1;
+        StartScript.stop();
         angle = 270.0f;//transform.eulerAngles[2];
     }
 
@@ -31,6 +33,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKey("w"))
         {
             if (Math.Abs(transform.eulerAngles.z - 0.0f) < TOLERANCE) return;
+            StartScript.plaing();
             direction.y = 1;
             direction.x = 0;
             angle = 180.0f;
@@ -39,6 +42,7 @@ public class Movement : MonoBehaviour
         else if (Input.GetKey("a"))
         {
             if (Math.Abs(transform.eulerAngles.z - 90.0f) < TOLERANCE) return;
+            StartScript.plaing();
             direction.x = -1;
             direction.y = 0;
             angle = 270.0f;
@@ -47,6 +51,7 @@ public class Movement : MonoBehaviour
         else if (Input.GetKey("s"))
         {
             if (Math.Abs(transform.eulerAngles.z - 180.0f) < TOLERANCE) return;
+            StartScript.plaing();
             direction.y = -1;
             direction.x = 0;
             angle = 0.0f;
